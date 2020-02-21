@@ -1,0 +1,251 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    width: 100%;
+    margin: 0 auto;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    color: #666d89;
+}
+
+/*HEADER*/
+.header {
+    width: 100%;
+
+    background: #2d303a;
+    border-bottom: solid 6px #323746;
+}
+
+.header__content {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 23px 40px 29px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.header__logo {
+    margin: 0;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: -1.10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.header__accent {
+    margin: 0;
+
+    color: #f06c64;
+}
+
+.navigation__list {
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+}
+
+.navigation__item {
+    margin-right: 30px;
+    position: relative;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.044em;
+}
+
+.navigation__link {
+    text-decoration: none;
+    color: #ffffff;
+    transition: opacity 0.2s ease-in 0.1s;
+}
+
+.navigation__link_state_active {
+    color: #f06c64;
+}
+
+.navigation__link:hover {
+    opacity: 0.6;
+}
+
+.navigation__item::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+
+    background-color: #434759;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    right: -16px;
+
+    transform: translateY(-50%);
+}
+
+.navigation__item:last-child::after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+.navigation__item:last-child {
+    margin-right: 0;
+}
+
+/*SLIDER*/
+.slider {
+    width: 100%;
+
+    background: #f06c64;
+    border-bottom: solid 6px #ea676b;
+}
+
+.slider__content {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 53px 40px 58px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.slider__arrow-prev {
+    transition: opacity 0.2s ease-in 0.1s;
+}
+
+.slider__arrow-prev:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.slider__container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 54px;
+    padding-right: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__image {
+
+}
+
+.slider__arrow-next {
+    transition: opacity 0.2s ease-in 0.1s;
+}
+
+.slider__arrow-next:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+/*SERVICES*/
+
+.services {
+    width: 100%;
+
+    background: #f2f2f2;
+    border-bottom: solid 6px #ffffff;
+}
+
+.services__content {
+    max-width: 1020px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 67px 40px 63px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.services__title {
+    margin-bottom: 28px;
+
+    font-family: 'Lato Black', sans-serif;
+    font-size: 30px;
+    line-height: 0.7;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    word-spacing: -1.5px;
+}
+
+.services__subtitle {
+    margin-bottom: 47px;
+
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: -0.030em;
+}
+
+.benefits {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 299px);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 21.6px;
+    row-gap: 39px;
+}
+
+.benefits__item {
+    height: 84px;
+    display: flex;
+    align-items: flex-start;
+    position:relative;
+    overflow:hidden;
+}
+
+
+.benefits__icon {
+    border-radius: 50%;
+    margin-right: 21px;
+}
+
+
+.benefits__title {
+    margin-bottom: 11.5px;
+
+    font-size: 18px;
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.benefits__text {
+    margin: 0;
+
+    text-align: justify;
+    font-size: 12px;
+    line-height: 1.7;
+}
