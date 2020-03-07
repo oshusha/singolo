@@ -559,11 +559,12 @@ button {
 
 .form__input:focus {
     outline: none;
-    background-color: #f2f2f2;
+    background-color: #d6564f;
+    box-shadow: 0 0 5px 1px #ffffff;
 }
 
 .form__input:required:valid {
-    border: solid 2px #1e90ff;
+    box-shadow: 0 0 5px 1px #ffffff;
 }
 
 .form__input:focus:invalid {
@@ -592,7 +593,8 @@ button {
 
 .form__text-area:focus {
     outline: none;
-    background-color: #f2f2f2;
+    background-color: #d6564f;
+    box-shadow: 0 0 5px 1px #ffffff;
 }
 
 .form__button {
@@ -609,7 +611,7 @@ button {
 
 .form__button:hover {
     color: #f0d8d9;
-    background-color: #1e90ff;
+    box-shadow: 0 0 5px 1px #ffffff;
 }
 
 .quote__contacts {
