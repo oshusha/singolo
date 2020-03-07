@@ -31,7 +31,7 @@ button {
     width: 100%;
     margin: 0 auto;
 
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato Light', sans-serif;
     font-style: normal;
     color: #666d89;
 }
@@ -42,12 +42,15 @@ button {
 
     background: #2d303a;
     border-bottom: solid 6px #323746;
+
+    font-family: 'Lato Light', sans-serif;
+    font-style: normal;
 }
 
 .header__content {
     max-width: 1020px;
     margin: 0 auto;
-    padding: 23px 40px 31px;
+    padding: 23px 40px 30px;
     box-sizing: border-box;
     display: flex;
     align-items: baseline;
@@ -61,7 +64,7 @@ button {
     font-weight: 700;
     font-size: 25px;
     line-height: 1;
-    letter-spacing: -1.10px;
+    letter-spacing: -0.2px;
     color: #ffffff;
     cursor: pointer;
 }
@@ -87,7 +90,6 @@ button {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -0.044em;
 }
 
 .navigation__link {
@@ -193,30 +195,32 @@ button {
     max-width: 1020px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 67px 40px 67px;
+    padding: 68px 40px 67px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .services__title {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 
     font-family: 'Lato Black', sans-serif;
     font-size: 30px;
     line-height: 0.8;
-    font-weight: 400;
+    font-weight: 900;
     letter-spacing: 0.01em;
     word-spacing: -1.5px;
 }
 
 .services__subtitle {
-    margin-bottom: 47px;
+    margin-bottom: 44px;
 
+    font-family: "Lato Light", sans-serif;
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.7;
     font-weight: 300;
-    letter-spacing: -0.030em;
+    letter-spacing: -0.01em;
+    text-align: justify;
 }
 
 .benefits {
@@ -244,20 +248,23 @@ button {
 
 
 .benefits__title {
-    margin-bottom: 11.5px;
+    margin-bottom: 9px;
 
+    font-family: 'Lato Black', sans-serif;
     font-size: 18px;
-    line-height: 0.9;
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    line-height: 1em;
+    font-weight: 900;
+    letter-spacing: -0.01em;
 }
 
 .benefits__text {
     margin: 0;
 
-    text-align: justify;
+    font-family: "Lato Regular", sans-serif;
     font-size: 12px;
-    line-height: 1.7;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.8em;
 }
 
 /*PORTFOLIO*/
@@ -281,25 +288,25 @@ button {
     margin-bottom: 28px;
 
     font-size: 30px;
-    line-height: 22px;
+    line-height: 24px;
 
     color: #666d89;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato Black", sans-serif;
     font-weight: 900;
-    text-align: left;
+    letter-spacing: -0.002em;
 }
 
 .portfolio__subtitle {
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 
     font-size: 18px;
     line-height: 24px;
 
     color: #767e9e;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato Light", sans-serif;
     font-weight: 300;
-    text-align: left;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.01em;
+    text-align: justify;
 }
 
 .portfolio__tags {
@@ -308,8 +315,8 @@ button {
 
 .portfolio__tags-item {
     max-height: 22px;
-    padding: 1px 6px 1px;
-    margin-right: 10px;
+    padding: 1px 7px 1px 9px;
+    margin-right: 7px;
     box-sizing: border-box;
 
     border-radius: 5px;
@@ -317,20 +324,25 @@ button {
 
     color: #767e9e;
     font-size: 12px;
-    line-height: 21px;
-    font-family: "Lato", sans-serif;
+    line-height: 18px;
+    font-family: "Lato Regular", sans-serif;
     font-weight: 400;
     text-align: center;
     vertical-align: middle;
-    letter-spacing: -0.04rem;
+    letter-spacing: -0.05em;
 
     cursor: pointer;
 }
 
 .portfolio__tags-item_selected {
+    padding: 1px 10px 1px 7px;
     border: 1px solid #c5c5c5;
 
     color: #dedede;
+}
+
+.portfolio__tags-item:hover {
+    opacity: 0.6;
 }
 
 .portfolio__photo-grid {
@@ -364,7 +376,7 @@ button {
     max-width: 1020px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 67px 40px 67px;
+    padding: 72px 40px 66px;
     display: flex;
     flex-direction: column;
 }
@@ -372,31 +384,26 @@ button {
 .about__title {
     margin-bottom: 24px;
     font-size: 30px;
-    line-height: 23px;
+    line-height: 18px;
     color: #666d89;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato Black", sans-serif;
     font-weight: 900;
-    letter-spacing: -0.05rem;
 }
 
 .about__subtitle {
-    margin-bottom: 15px;
+    margin-bottom: 44px;
     font-size: 18px;
     line-height: 30px;
     color: #767e9e;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato Light", sans-serif;
     font-weight: 300;
+    text-align: justify;
+    letter-spacing: -0.01em;
 }
 
 .about__container {
     display: flex;
     justify-content: space-between;
-
-    font-size: 18px;
-    line-height: 30px;
-    color: #767e9e;
-    font-family: "Lato";
-    font-weight: 300;
 }
 
 
@@ -416,7 +423,7 @@ button {
     font-size: 18px;
     line-height: 18px;
     color: #666d89;
-    font-family: "Lato";
+    font-family: "Lato Black", sans-serif;
     font-weight: 900;
     text-align: left;
 
@@ -427,12 +434,13 @@ button {
 }
 
 .about__staff-subtitle {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
     font-size: 12px;
     line-height: 22px;
     color: #767e9e;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato Regular", sans-serif;
+    text-align: justify;
     font-weight: 400;
     letter-spacing: -0.001rem;
 }
@@ -444,14 +452,12 @@ button {
 }
 
 .social-icons__icon {
-    /*margin-right: 7px;*/
-    display: inline-block;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 30px;
-    height: 30px;
+    width: 32.5px;
+    height: 32.5px;
 
     background-repeat: no-repeat;
     background-position: center center;
@@ -461,22 +467,6 @@ button {
 
 .social-icons__icon:hover {
     opacity: 0.6;
-}
-
-.social-icons__icon:not(:first-child) {
-    /*margin-left: 4px;*/
-}
-
-.social-icons__icon_facebook {
-}
-
-.social-icons__icon_google-plus {
-}
-
-.social-icons__icon_twitter {
-}
-
-.social-icons__icon_linkedin {
 }
 
 /*QUOTE*/
@@ -492,30 +482,32 @@ button {
     max-width: 1020px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 67px 40px 67px;
+    padding: 70px 40px 23px;
     display: flex;
     flex-direction: column;
 }
 
 .quote__title {
-    margin-bottom: 26px;
+    margin-bottom: 24px;
 
     font-size: 30px;
     line-height: 21px;
     color: #f0d8d9;
-    font-family: "Lato";
+    font-family: "Lato Black", sans-serif;
     font-weight: 900;
     word-spacing: -0.04em;
 }
 
 .quote__subtitle {
-    margin-bottom: 44px;
+    margin-bottom: 43px;
 
     font-size: 18px;
     line-height: 30px;
     color: #f0d8d9;
-    font-family: "Lato";
+    font-family: "Lato Regular", sans-serif;
+    text-align: justify;
     font-weight: 300;
+    letter-spacing: -0.02em;
 }
 
 .quote__two-columns {
@@ -539,32 +531,13 @@ button {
 
 .form__field {
     width: 100%;
-    max-height: 38px;
-    padding: 7px 14px 9px;
+    margin-bottom: 18px;
+    padding: 9px 14px 10px;
     border: none;
-    margin-bottom: 13px;
+
     border-radius: 5px;
 
-    font-family: "Lato";
-    font-size: 1.2rem;
-    line-height: 2.2rem;
-    font-weight: 400;
-    color: #f0d8d9;
-
     background-color: #d6564f;
-}
-
-
-.form__field::placeholder {
-    font-family: "Lato";
-    font-size: 12rem;
-    line-height: 22px;
-    font-weight: 400;
-    color: #f48c8f;
-}
-
-.form__field:required:valid {
-    background-color: rgb(51, 70, 51);
 }
 
 .form__input {
@@ -572,43 +545,58 @@ button {
     width: 100%;
     box-sizing: border-box;
     border: none;
-    color: #f2f2f2;
     background-color: inherit;
 }
 
-.form__text-area {
-    font-family: "Lato";
+.form__input::placeholder {
+    font-family: "Lato Bold", sans-serif;
     font-size: 12px;
-    line-height: 22em;
+    line-height: 22px;
     font-weight: 400;
-    padding: 7px 14px 9px;
-    width: 100%;
-    border: none;
-    margin-bottom: 16px;
-    border-radius: 5px;
-    color: #f0d8d9;
-    background-color: #d6564f;
-
-    resize: none;
-    max-height: 202px;
+    text-align: justify;
+    color: #f48c8f;
 }
 
-.form__text-area::placeholder{
-    font-family: "Lato";
-    font-size: 1.2rem;
-    line-height: 2.2rem;
+.form__input:focus {
+    outline: none;
+    background-color: #f2f2f2;
+}
+
+.form__input:required:valid {
+    border: solid 2px #1e90ff;
+}
+
+.form__input:focus:invalid {
+    border: solid 2px #dc143c;
+    filter: saturate(1.5);
+}
+.form__text-area {
+    width: 100%;
+    padding: 6px 14px 16px;
+    border: none;
+
+    border-radius: 5px;
+
+    resize: none;
+    background-color: #d6564f;
+}
+
+.form__text-area::placeholder {
+    font-family: "Lato Bold", sans-serif;
+    font-size: 12px;
+    line-height: 22px;
     font-weight: 400;
+    text-align: justify;
     color: #f48c8f;
-    letter-spacing: 0.02rem;
 }
 
 .form__text-area:focus {
     outline: none;
-    background-color: #2d303a;
+    background-color: #f2f2f2;
 }
 
 .form__button {
-    font-family: "Lato";
+    font-family: "Lato Bold", sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
     padding: 7px 14px;
@@ -621,13 +609,11 @@ button {
 
 .form__button:hover {
     color: #f0d8d9;
-    background-color: #2d303a;
+    background-color: #1e90ff;
 }
 
 .quote__contacts {
     max-width: 301px;
-
-    color: #f0d8d9;
 }
 
 .quote__contacts-title {
@@ -636,8 +622,9 @@ button {
     font-size: 18px;
     line-height: 18px;
     color: #f0d8d9;
-    font-family: "Lato";
+    font-family: "Lato Black", sans-serif;
     font-weight: 900;
+    letter-spacing: 0.01em;
 }
 
 .quote__contacts-subtitle {
@@ -646,11 +633,12 @@ button {
     font-size: 12px;
     line-height: 22px;
     color: #f0d8d9;
-    font-family: "Lato";
+    font-family: "Lato Bold", sans-serif;
     font-weight: 400;
+    letter-spacing: -0.018em;
 }
 
-.quote__contacts-icons {
+.quote__contacts-info{
     list-style-type: none;
 }
 
@@ -658,14 +646,32 @@ button {
     font-size: 12px;
     line-height: 22px;
     color: #f0d8d9;
-    font-family: "Lato";
+    font-family: "Lato Bold", sans-serif;
     font-weight: 400;
 
     text-decoration: none;
 }
 
 .quote__contacts-link:hover {
-    opacity: 0.6%;
+    opacity: 0.6;
+}
+
+.quote__contacts-icon_location {
+    max-width: 7px;
+    height: 11px;
+    margin: 0 10px 0 4px;
+}
+
+.quote__contacts-icon_phone {
+    max-width: 11px;
+    height: 11px;
+    margin: 0 9px 1px 2px;
+}
+
+.quote__contacts-icon_email {
+    width: 13px;
+    height: 8px;
+    margin: 0 7px 0 1px;
 }
 
 /*FOOTER*/

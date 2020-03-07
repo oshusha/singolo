@@ -83,14 +83,14 @@
               <img class="benefits__icon" src="./assets/images/responsive.png" alt="">
               <div class="benefits__info">
                 <h2 class="benefits__title">Responsive Layout</h2>
-                <p class="benefits__text advantages__text_topic_layout">Sed porttitor placerat rhoncus.
+                <p class="benefits__text">Sed porttitor placerat rhoncus.
                   In&nbsp;at&nbsp;nunc tellus. Maecenas blandit nunc ligula. Prae&shy;sent elit leo.</p>
               </div>
             </div>
             <div class="benefits__item">
               <img class="benefits__icon" src="./assets/images/support.png" alt="">
               <div class="benefits__info">
-                <h2 class="benefits__title advantages__title_topic_support">24 / 7&nbsp;Support</h2>
+                <h2 class="benefits__title">24 / 7&nbsp;Support</h2>
                 <p class="benefits__text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi.
                   Nulla a&nbsp;sem erat. Pellen&shy;tesque egestas venenatis lorem.</p>
               </div>
@@ -113,7 +113,7 @@
           <p class="portfolio__subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
           <div class="portfolio__tags">
-            <button class="portfolio__tags-item portfolio__tags-item_selected">All</button>
+            <button class="portfolio__tags-item_selected portfolio__tags-item">All</button>
             <button class="portfolio__tags-item">Web Design</button>
             <button class="portfolio__tags-item">Graphic Design</button>
             <button class="portfolio__tags-item">Artwork</button>
@@ -224,7 +224,7 @@
             sem nec elit. Fusce dapibus, tellus ac&nbsp;cursus commodo, tortor mauris condimentum nibh.
           </p>
           <div class="quote__two-columns">
-              <form class="quote__form" name="quote" method="POST" novalidate>
+              <form class="quote__form" name="quote" method="POST">
                  <fieldset class="form__fieldset">
                    <div class="form__field">
                      <input class="form__input" type="text" name="name" placeholder="Name (Required)" required>
@@ -235,11 +235,8 @@
                    <div class="form__field">
                      <input class="form__input" type="text" name="name" placeholder="Subject">
                    </div>
-                   <div class="form__field">
-                     <textarea class="form__text-area" cols="30" rows="13" type="text" name="name" placeholder="Describe your project in detail..."></textarea>
-                   </div>
-
-                   <button class="form__button" type="submit">Send It!</button>
+                   <textarea class="form__text-area" cols="30" rows="12" name="name" placeholder="Describe your project in detail..."></textarea>
+                   <button class="form__button" type="submit" formmethod="POST">Send It!</button>
                  </fieldset>
               </form>
               <div class="quote__contacts">
@@ -248,10 +245,10 @@
                   Fusce vitae aliquam tellus. Proin sit amet volutpat libero.
                   Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
                 </p>
-                <ul class="quote__contacts-icons">
-                  <li><a class="quote__contacts-link" href="#"><img src="./images/facebook_white.svg" alt=""> Elm St. 14/05 Lost City</a></li>
-                  <li><a class="quote__contacts-link" href="tel:035283318635"><img src="./images/facebook_white.svg" alt=""> 03528 331 86 35</a></li>
-                  <li><a class="quote__contacts-link" href="mailto:info@singolo.com"><img src="./images/facebook_white.svg" alt=""> info@singolo.com</a></li>
+                <ul class="quote__contacts-info">
+                  <li><a class="quote__contacts-link" href="#"><img class="quote__contacts-icon_location" src="./assets/images/location-icon.svg" alt=""> Elm St. 14/05 Lost City</a></li>
+                  <li><a class="quote__contacts-link" href="tel:035283318635"><img class="quote__contacts-icon_phone" src="./assets/images/phone-icon.svg" alt=""> 03528 331 86 35</a></li>
+                  <li><a class="quote__contacts-link" href="mailto:info@singolo.com"><img class="quote__contacts-icon_email" src="./assets/images/email-icon.svg" alt=""> info@singolo.com</a></li>
                 </ul>
               </div>
           </div>
