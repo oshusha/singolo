@@ -14,9 +14,9 @@
       <div class="header__content">
         <h1 class="header__logo">SINGOLO<span class="header__accent">*</span></h1>
         <nav class="navigation">
-          <ul class="navigation__list">
+          <ul class="navigation__list" id="menu">
             <li class="navigation__item">
-              <a class="navigation__link" href="#home">home</a>
+              <a class="navigation__link navigation__link_state_active" href="#home">home</a>
             </li>
             <li class="navigation__item">
               <a class="navigation__link" href="#services">services</a>
@@ -108,18 +108,18 @@
       </section>
 
       <section class="portfolio" id="portfolio">
-        <div class="portfolio__content">
+        <div class="portfolio__content" >
           <h2 class="portfolio__title">Portfolio</h2>
           <p class="portfolio__subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
-          <div class="portfolio__tags">
-            <button class="portfolio__tags-item_selected portfolio__tags-item">All</button>
-            <button class="portfolio__tags-item">Web Design</button>
-            <button class="portfolio__tags-item">Graphic Design</button>
-            <button class="portfolio__tags-item">Artwork</button>
+          <div class="portfolio__tabs" id="tabs_menu">
+            <button class="portfolio__tabs-item portfolio__tabs-item_active ">All</button>
+            <button class="portfolio__tabs-item">Web Design</button>
+            <button class="portfolio__tabs-item">Graphic Design</button>
+            <button class="portfolio__tabs-item">Artwork</button>
           </div>
 
-          <div class="portfolio__photo-grid">
+          <div class="portfolio__photo-grid" id="projects">
               <img class="portfolio__photo-grid-item" src="./assets/images/image1.png" alt="Ship">
               <img class="portfolio__photo-grid-item" src="./assets/images/image2.png" alt="Smiling girl">
               <img class="portfolio__photo-grid-item" src="./assets/images/image3.png" alt="City">
@@ -270,6 +270,6 @@
         </div>
       </div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
