@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Anastasia Oshurkova">
     <title>SINGOLO</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/fonts/fonts.css">
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body class="page" id="home">
+  <body id="home" class="page">
     <header class="header">
       <div class="header__content">
         <h1 class="header__logo">SINGOLO<span class="header__accent">*</span></h1>
@@ -40,15 +41,18 @@
       <section class="slider">
         <div class="slider__content">
           <img class="slider__arrow-prev" src="./assets/images/arrow-prev.png" alt="Arrow prev.">
-          <div class="slider__container">
+          <div class="slider__container slider__container_active">
             <img class="slider__image" src="./assets/images/iphone-vertical.png" alt="IPhone">
             <img class="slider__image" src="./assets/images/iphone-horizontal.png" alt="IPhone">
+          </div>
+          <div class="slider__container">
+            <img class="slider__image" src="./assets/images/slider2.jpg" alt="slider2">
           </div>
           <img class="slider__arrow-next" src="./assets/images/arrow-next.png" alt="Arrow next">
         </div>
       </section>
 
-      <section class="services" id="services">
+      <section id="services" class="services">
         <div class="services__content">
           <h2 class="services__title">Our Services</h2>
           <p class="services__subtitle">Fusce dapibus, tellus ac&nbsp;cursus commodo, tortor mauris
@@ -107,19 +111,19 @@
         </div>
       </section>
 
-      <section class="portfolio" id="portfolio">
+      <section id="portfolio" class="portfolio">
         <div class="portfolio__content" >
           <h2 class="portfolio__title">Portfolio</h2>
           <p class="portfolio__subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
-          <div class="portfolio__tabs" id="tabs_menu">
+          <div id="tabs_menu" class="portfolio__tabs">
             <button class="portfolio__tabs-item portfolio__tabs-item_active ">All</button>
             <button class="portfolio__tabs-item">Web Design</button>
             <button class="portfolio__tabs-item">Graphic Design</button>
             <button class="portfolio__tabs-item">Artwork</button>
           </div>
 
-          <div class="portfolio__photo-grid" id="projects">
+          <div id="projects" class="portfolio__photo-grid">
               <img class="portfolio__photo-grid-item" src="./assets/images/image1.png" alt="Ship">
               <img class="portfolio__photo-grid-item" src="./assets/images/image2.png" alt="Smiling girl">
               <img class="portfolio__photo-grid-item" src="./assets/images/image3.png" alt="City">
@@ -136,7 +140,7 @@
         </div>
       </section>
 
-      <section class="about" id="about">
+      <section id="about" class="about">
         <div class="about__content">
           <h2 class="about__title">About Us</h2>
           <p class="about__subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
@@ -216,7 +220,7 @@
         </div>
       </section>
 
-      <section class="quote" id="contact">
+      <section id="contact" class="quote">
         <div class="quote__container">
           <h2 class="quote__title">Get a Quote</h2>
           <p class="quote__subtitle">Fusce dapibus, tellus ac&nbsp;cursus commodo, tortor mauris
@@ -224,13 +228,14 @@
             sem nec elit. Fusce dapibus, tellus ac&nbsp;cursus commodo, tortor mauris condimentum nibh.
           </p>
           <div class="quote__two-columns">
-              <form class="quote__form" name="quote" method="POST">
+              <form id="form" class="quote__form" name="quote" method="POST">
                    <input class="form__input" type="text" name="name" placeholder="Name (Required)" pattern="^[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?$" required>
                    <input class="form__input" type="email" name="name" placeholder="Email (Required)" required>
-                   <input class="form__input" type="text" name="name" placeholder="Subject">
-                   <textarea class="form__text-area" cols="30" rows="13" name="name" placeholder="Describe your project in detail..."></textarea>
-                   <button class="form__button" type="submit" formmethod="POST">Send It!</button>
+                   <input id="subject" class="form__input" type="text" name="name" placeholder="Subject">
+                   <textarea id="describe" class="form__text-area" cols="30" rows="13" name="name" placeholder="Describe your project in detail..."></textarea>
+                   <button id="form__button" class="form__button" type="submit" formmethod="POST">SEND</button>
               </form>
+
               <div class="quote__contacts">
                 <h3 class="quote__contacts-title">Contact information</h3>
                 <p class="quote__contacts-subtitle">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
@@ -246,11 +251,14 @@
           </div>
         </div>
       </section>
+
+
+
     </main>
 
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer__copyright"><p>&copy; Copyright 2013</p><span class="footer__copyright_decoration">by PSDchat.com</span></div>
+<!--        <div class="footer__copyright"><p>&copy; Copyright 2013</p><span class="footer__copyright_decoration">by PSDchat.com</span></div>-->
         <div class="footer__social-icons">
           <a class="footer__social-icons_icon" href="#"><svg class="social-icons__icon_facebook-svg" width="14px" height="14px" viewBox="0 0 50 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                       <path id="" d="M50,15.65L35.72,15.65C34.03,15.65 32.14,17.87 32.14,20.84L32.14,31.15L50,31.15L50,45.85L32.14,45.85L32.14,90L15.29,90L15.29,45.85L0,45.85L0,31.15L15.29,31.15L15.29,22.5C15.29,10.09 23.9,0 35.72,0L50,0L50,15.65Z" style="fill:rgb(102,109,137);fill-rule:nonzero;"/>
@@ -270,6 +278,16 @@
         </div>
       </div>
     </footer>
+    <div id="popup" class="popup popup__hidden">
+      <div id="popup__message" class="popup__content">
+        <h3 class="popup__title">Письмо отправлено!</h3>
+        <p id="popup__subject" class="popup__subject">Тема: <span id="popup__result-subject"></span></p>
+        <p id="popup__describe" class="popup__describe">Описание: <span id="popup__result-describe"></span></p>
+        <br>
+        <button id="close__button" type="submit" class="button popup__close">OK</button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
