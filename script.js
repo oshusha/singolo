@@ -20,6 +20,11 @@ window.onload = function(){
 
 //Переключение слайдов бесконечной каруселькой
 
+
+
+
+
+
 //Активация телефонов слайда1 (экран гаснет)
     function offDisplayLeftPhone() {
         const blackDisplayVertical = document.getElementById('black-display-vertical')
@@ -118,27 +123,3 @@ window.onload = function(){
     CLOSE_BUTTON.addEventListener('click', closePopup);
 
 }
-// //6. Открываем форму редактирования данных пользователя
-// const popupEdit = document.querySelector('.popup-edit');
-// const userInfoEdit = document.querySelector('.user-info__edit');
-//
-// function addClassToPopupEdit() {
-//     popupEdit.classList.add('popup_is-opened');
-// }
-//
-//
-// //7. Закрываем форму редактирования данных пользователя
-// const popupEditClose = document.querySelector('.popup-edit__close');
-// function deleteClassToPopupEdit() {
-//     popupEdit.classList.remove('popup_is-opened');
-// }
-//
-//
-// //8. Получение имени и информации о себе в поля ввода
-// let infoName = document.querySelector('.user-info__name').textContent;
-// let infoJob = document.querySelector('.user-info__job').textContent;
-// const nameProfile = document.forms.profile.elements.name;
-// const aboutProfile = document.forms.profile.elements.about;
-//
-// nameProfile.value = infoName;
-// aboutProfile.value = infoJob;
