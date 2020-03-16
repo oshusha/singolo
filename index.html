@@ -42,8 +42,15 @@
         <div class="slider__content">
           <img class="slider__arrow-prev" src="./assets/images/arrow-prev.png" alt="Arrow prev.">
           <div class="slider__container slider__container_active">
+
             <img class="slider__image" src="./assets/images/iphone-vertical.png" alt="IPhone">
+            <div id="black-display-vertical" class="slider__black-display_vertical"></div>
+            <div id="button_iphone-vertical" class="slider__iphone-button_vertical"></div>
+
             <img class="slider__image" src="./assets/images/iphone-horizontal.png" alt="IPhone">
+            <div id="black-display-horizontal" class="slider__black-display_horizontal"></div>
+            <div id="button_iphone-horizontal" class="slider__iphone-button_horizontal"></div>
+
           </div>
           <div class="slider__container">
             <img class="slider__image" src="./assets/images/slider2.jpg" alt="slider2">
@@ -228,13 +235,13 @@
             sem nec elit. Fusce dapibus, tellus ac&nbsp;cursus commodo, tortor mauris condimentum nibh.
           </p>
           <div class="quote__two-columns">
-              <form id="form" class="quote__form" name="quote" method="POST">
-                   <input class="form__input" type="text" name="name" placeholder="Name (Required)" pattern="^[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?$" required>
-                   <input class="form__input" type="email" name="name" placeholder="Email (Required)" required>
-                   <input id="subject" class="form__input" type="text" name="name" placeholder="Subject">
-                   <textarea id="describe" class="form__text-area" cols="30" rows="13" name="name" placeholder="Describe your project in detail..."></textarea>
-                   <button id="form__button" class="form__button" type="submit" formmethod="POST">SEND</button>
-              </form>
+            <form id="form" class="quote__form" name="form" method="POST">
+              <input class="form__input" type="text" name="name" placeholder="Name (Required)" pattern="^[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?$" required>
+              <input class="form__input" type="email" name="email" placeholder="Email (Required)" required>
+              <input id="subject" class="form__input" type="text" name="subject" placeholder="Subject">
+              <textarea id="describe" class="form__text-area" cols="30" rows="13" name="describe" placeholder="Describe your project in detail..."></textarea>
+              <button id="form__button" class="form__button" type="submit" disabled formmethod="POST">SEND</button>
+            </form>
 
               <div class="quote__contacts">
                 <h3 class="quote__contacts-title">Contact information</h3>
@@ -280,9 +287,9 @@
     </footer>
     <div id="popup" class="popup popup__hidden">
       <div id="popup__message" class="popup__content">
-        <h3 class="popup__title">Письмо отправлено!</h3>
-        <p id="popup__subject" class="popup__subject">Тема: <span id="popup__result-subject"></span></p>
-        <p id="popup__describe" class="popup__describe">Описание: <span id="popup__result-describe"></span></p>
+        <h3 class="popup__title">The letter was sent!</h3>
+        <p id="popup__subject" class="popup__subject">Subject: <span id="popup__result-subject"></span></p>
+        <p id="popup__describe" class="popup__describe">Description: <span id="popup__result-describe"></span></p>
         <br>
         <button id="close__button" type="submit" class="button popup__close">OK</button>
       </div>

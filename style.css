@@ -236,6 +236,66 @@ button {
     width: 100%;
 }
 
+.slider__black-display_vertical {
+    position: absolute;
+    top: 65px;
+    left: 68px;
+    display: none;
+    width: 188px;
+    height: 333px;
+    background-color: #000000;
+}
+
+.slider__black-display_horizontal {
+    position: absolute;
+    top: 136px;
+    right: 146px;
+    display: none;
+    width: 333px;
+    height: 188px;
+    border-radius: 2px;
+    background-color: #000000;
+}
+
+.slider__black-display_display-off {
+    display: block;
+}
+
+.slider__iphone-button_vertical {
+    background: transparent;
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top: 408px;
+    left: 142px;
+
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.slider__iphone-button_horizontal {
+    background: transparent;
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top: 209px;
+    right: 489px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.slider__iphone-button_vertical:hover,
+.slider__iphone-button_horizontal:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px 1px #ffffff;
+    box-shadow: 0 0 5px 1px #ffffff;
+}
+
+
+
 .slider__image {
 
 }
@@ -982,7 +1042,7 @@ button {
 }
 
 .popup__title {
-    margin-bottom: 20px;
+    margin: 20px 0;
     font-size: 18px;
     line-height: 18px;
     color: #000000;
