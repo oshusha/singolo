@@ -284,6 +284,8 @@ button {
     left: 435px;
     z-index: 5;
     transition: .5s;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .back-slide__phone-button:hover {
@@ -293,6 +295,7 @@ button {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
+    box-shadow: 0 0 1px 3px #ffffff;
 }
 
 .back-slide__phone-left {
@@ -349,6 +352,7 @@ button {
     -moz-border-radius: 50%;
     border-radius: 50%;
     z-index: 2;
+    transition: .5s;
 }
 
 .slider__iphone-button_horizontal {
@@ -362,14 +366,18 @@ button {
     -moz-border-radius: 50%;
     border-radius: 50%;
     z-index: 2;
+    transition: .5s;
 }
 
 .slider__iphone-button_vertical:hover,
 .slider__iphone-button_horizontal:hover {
-    opacity: 0.6;
     cursor: pointer;
-    -webkit-box-shadow: 0 0 5px 1px #ffffff;
-    box-shadow: 0 0 5px 1px #ffffff;
+    box-shadow: 0 0 1px 3px #ffffff;
+    transition: .5s;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .to-left {
