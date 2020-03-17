@@ -169,6 +169,7 @@ button {
 .main {
     position: relative;
 }
+
 /*SLIDER*/
 .slider {
     width: 100%;
@@ -266,8 +267,8 @@ button {
 .back-slide__phone-display {
     position: absolute;
     z-index: 4;
-    bottom: 131px;
-    left: 359px;
+    bottom: 128px;
+    left: 357px;
 }
 
 .back-slide__phone-shadow {
@@ -510,8 +511,8 @@ button {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -1067,7 +1068,7 @@ button {
     text-align: justify;
 }
 
-.quote__contacts-info{
+.quote__contacts-info {
     list-style-type: none;
 }
 
@@ -1118,7 +1119,7 @@ button {
     z-index: 100;
 }
 
-.popup__hidden{
+.popup__hidden {
     display: none;
 }
 

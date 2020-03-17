@@ -1,5 +1,5 @@
 'use strict';
-window.onload = function(){
+window.onload = function () {
     const MENU = document.getElementById('menu');
     const BUTTON_IPHONE_VERTICAL = document.getElementById('button_iphone-vertical');
     const BUTTON_IPHONE_HORIZONTAL = document.getElementById('button_iphone-horizontal');
@@ -36,16 +36,16 @@ window.onload = function(){
     function hideSlide(direction) {
         isEnabled = false;
         SLIDES[currentSlide].classList.add(direction);
-        SLIDES[currentSlide].addEventListener('animationend', function() {
+        SLIDES[currentSlide].addEventListener('animationend', function () {
             this.classList.remove('slider__item_active', direction);
         })
     }
 
     function showSlide(direction) {
         SLIDES[currentSlide].classList.add('slider__item_next', direction);
-        SLIDES[currentSlide].addEventListener('animationend', function() {
+        SLIDES[currentSlide].addEventListener('animationend', function () {
             this.classList.remove('slider__item_next', direction);
-            this.classList.add('slider__item_active', direction);
+            this.classList.add('slider__item_active');
             isEnabled = true;
         })
     }
@@ -147,7 +147,7 @@ window.onload = function(){
                 arrOfSrc.push(el.src);
                 el.src = '';
             })
-            let randomArr = arrOfSrc.sort(() =>  Math.random() - 0.5);
+            let randomArr = arrOfSrc.sort(() => Math.random() - 0.5);
             PROJECTS.querySelectorAll('img').forEach((el, i) => el.src = randomArr[i]);
         }
     }
@@ -172,15 +172,13 @@ window.onload = function(){
         let describeValue = this.form.describe.value;
         if (subjectValue.length) {
             document.getElementById('popup__result-subject').innerText = subjectValue;
-        }
-        else
+        } else
             document.getElementById('popup__subject').innerText = 'Without subject'
 
         if (describeValue.length) {
 
-            document.getElementById('popup__result-describe').innerText =  describeValue;
-        }
-        else
+            document.getElementById('popup__result-describe').innerText = describeValue;
+        } else
             document.getElementById('popup__describe').innerText = 'Without description';
 
         POPUP.classList.remove('popup__hidden');
@@ -196,18 +194,20 @@ window.onload = function(){
     }
 
     const form = document.forms.form;
-    function validate (inputs) {
+
+    function validate(inputs) {
         return inputs.every((elem) => elem.checkValidity());
     }
-    form.addEventListener("input",(event) => {
+
+    form.addEventListener("input", (event) => {
 
         const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
 
-            if(validate(inputs)){
-                BUTTON.removeAttribute('disabled', true);
-            } else {
-                BUTTON.setAttribute("disabled", true);
-            }
+        if (validate(inputs)) {
+            BUTTON.removeAttribute('disabled', true);
+        } else {
+            BUTTON.setAttribute("disabled", true);
+        }
     });
 
 //Слушатели событий
