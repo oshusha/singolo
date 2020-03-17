@@ -38,25 +38,36 @@
     <div class="plug"></div>
     <main class="main">
 
-      <section class="slider">
-        <div class="slider__content">
-          <img class="slider__arrow-prev" src="./assets/images/arrow-prev.png" alt="Arrow prev.">
-          <div class="slider__container slider__container_active">
+      <section id="slider" class="slider slider_red">
+          <div id="slides" class="slider__content">
+            <div class="slider__arrow-controllers">
+              <img id="arrow-prev" class="slider__arrow left" src="./assets/images/arrow-prev.png" alt="Arrow prev.">
+              <img id="arrow-next" class="slider__arrow right" src="./assets/images/arrow-next.png" alt="Arrow next">
+            </div>
+            <div id="slide-red" class="slider__item slider__item_active">
+              <div class="slider__item_front-slide front-slide">
+                <img class="front-slide__phone-image_vertical" src="./assets/images/iphone-vertical.png" alt="IPhone">
+                <div id="black-display-vertical" class="slider__black-display_vertical"></div>
+                <div id="button_iphone-vertical" class="slider__iphone-button_vertical"></div>
 
-            <img class="slider__image" src="./assets/images/iphone-vertical.png" alt="IPhone">
-            <div id="black-display-vertical" class="slider__black-display_vertical"></div>
-            <div id="button_iphone-vertical" class="slider__iphone-button_vertical"></div>
+                <img class="front-slide__phone-image_horizontal" src="./assets/images/iphone-horizontal.png" alt="IPhone">
+                <div id="black-display-horizontal" class="slider__black-display_horizontal"></div>
+                <div id="button_iphone-horizontal" class="slider__iphone-button_horizontal"></div>
+              </div>
+            </div>
 
-            <img class="slider__image" src="./assets/images/iphone-horizontal.png" alt="IPhone">
-            <div id="black-display-horizontal" class="slider__black-display_horizontal"></div>
-            <div id="button_iphone-horizontal" class="slider__iphone-button_horizontal"></div>
+            <div class="slider__item">
+              <div class="slider__item_back-slide back-slide">
+                <img src="./assets/images/back-slide-phone-box.png" class="back-slide__phone-box" alt="">
+                <img src="./assets/images/back-slide-phone-display.png" class="back-slide__phone-display" alt="">
+                <img src="./assets/images/back-slide-phone-shadow.png" class="back-slide__phone-shadow" alt="">
+                <img src="./assets/images/back-slide-phone-button.png" class="phone-button back-slide__phone-button" alt="">
+                <img src="./assets/images/back-slide-phone-bg.png" class="back-slide__phone-left" alt="">
+                <img src="./assets/images/back-slide-phone-bg.png" class="back-slide__phone-right" alt="">
+              </div>
+            </div>
 
           </div>
-          <div class="slider__container">
-            <img class="slider__image" src="./assets/images/slider2.jpg" alt="slider2">
-          </div>
-          <img class="slider__arrow-next" src="./assets/images/arrow-next.png" alt="Arrow next">
-        </div>
       </section>
 
       <section id="services" class="services">
@@ -239,7 +250,7 @@
               <input class="form__input" type="text" name="name" placeholder="Name (Required)" pattern="^[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?$" required>
               <input class="form__input" type="email" name="email" placeholder="Email (Required)" required>
               <input id="subject" class="form__input" type="text" name="subject" placeholder="Subject">
-              <textarea id="describe" class="form__text-area" cols="30" rows="13" name="describe" placeholder="Describe your project in detail..."></textarea>
+              <textarea id="describe" class="form__text-area" cols="30" rows="13" maxlength="500" name="describe" placeholder="Describe your project in detail..."></textarea>
               <button id="form__button" class="form__button" type="submit" disabled formmethod="POST">SEND</button>
             </form>
 

@@ -19,21 +19,119 @@ window.onload = function(){
     }
 
 //Переключение слайдов бесконечной каруселькой
+    const SLIDE_RED = document.getElementById('slide-red');
+    const SLIDE_BLUE = document.getElementById('slide-blue');
+    const ARROW_PREV = document.getElementById('arrow-prev');
+    const ARROW_NEXT = document.getElementById('arrow-next');
 
+    const SLIDER = document.getElementById('slider');
+    const SLIDES = document.querySelectorAll('.slider__item');
+    let currentSlide = 0;
+    let isEnabled = true;
 
+    function changeCurrentSlide(n) {
+        currentSlide = (n + SLIDES.length) % SLIDES.length; //делаем промотку, доходя до границы получаем 0
+    }
 
+    function hideSlide(direction) {
+        isEnabled = false;
+        SLIDES[currentSlide].classList.add(direction);
+        SLIDES[currentSlide].addEventListener('animationend', function() {
+            this.classList.remove('slider__item_active', direction);
+        })
+    }
 
+    function showSlide(direction) {
+        SLIDES[currentSlide].classList.add('slider__item_next', direction);
+        SLIDES[currentSlide].addEventListener('animationend', function() {
+            this.classList.remove('slider__item_next', direction);
+            this.classList.add('slider__item_active', direction);
+            isEnabled = true;
+        })
+    }
+
+    function previousSlide(n) {
+        hideSlide('to-right');
+        changeCurrentSlide(n - 1);
+        showSlide('from-left');
+        SLIDER.classList.toggle("slider_blue");
+        document.querySelector(".slider__arrow.left").classList.toggle("arrow_color");
+        document.querySelector(".slider__arrow.right").classList.toggle("arrow_color");
+    }
+
+    function nextSlide(n) {
+        hideSlide('to-left');
+        changeCurrentSlide(n + 1)
+        showSlide('from-right');
+        SLIDER.classList.toggle("slider_blue");
+        document.querySelector(".slider__arrow.left").classList.toggle("arrow_color");
+        document.querySelector(".slider__arrow.right").classList.toggle("arrow_color");
+    }
+
+    ARROW_PREV.addEventListener('click', function () {
+        // changeCurrentSlide(currentSlide - 1);
+        if (isEnabled) {
+            previousSlide(currentSlide);
+        }
+    })
+
+    ARROW_NEXT.addEventListener('click', function () {
+        if (isEnabled) {
+            nextSlide(currentSlide);
+        }
+    })
+
+    // function sliderHeader(event) {
+    //     let currentSlide = 0;
+    //     currentSlide = (currentSlide + 1) % SLIDES.length;
+    //     SLIDES[currentSlide].classList.toggle("slider__container_active");
+    //
+    //     if (SLIDES[currentSlide].classList.contains('slider__container_blue')) {
+    //         SLIDER.classList.toggle('slider_blue');
+    //         ARROW_PREV.classList.toggle('slider__arrow-prev-blue')
+    //     }
+    //
+    //     if (SLIDES[currentSlide].classList.contains('slider__container_red')) {
+    //         SLIDER.classList.toggle('slider_red');
+    //     }
+    // }
+
+    // function addAnimation(event) {
+    //     if (event.target == ARROW_PREV) {
+    //         SLIDE_BLUE.classList.add('slider_on-the-left');
+    //         console.log('Класс добавлен')
+    //     }
+    //
+    //     if  (event.target == ARROW_NEXT) {
+    //         SLIDE_RED.classList.add('slider_on-the-right');
+    //         console.log('Класс добавлен тоже');
+    //     }
+    // }
+    // if (event.target == ARROW_PREV || event.target == ARROW_NEXT) {
+    //
+    // }
+    // ARROW_PREV.addEventListener('click', () => {
+    //     console.log('PREV!');
+    //     SLIDER.style.backgroundColor = '#648bf0';
+    //     SLIDER.style.borderBottomColor = '#5173cb';
+    //     console.log(SLIDES);
+    // })
+
+    // ARROW_PREV.addEventListener('click', addAnimation);
+    // ARROW_NEXT.addEventListener('click', addAnimation);
+    // ARROW_PREV.addEventListener('click', sliderHeader);
+    // ARROW_NEXT.addEventListener('click', sliderHeader);
 
 
 //Активация телефонов слайда1 (экран гаснет)
     function offDisplayLeftPhone() {
         const blackDisplayVertical = document.getElementById('black-display-vertical')
-        blackDisplayVertical.classList.add('slider__black-display_display-off');
+        blackDisplayVertical.classList.toggle('slider__black-display_display-off');
     }
 
     function offDisplayRightPhone() {
         const blackDisplayHorizontal = document.getElementById('black-display-horizontal');
-        blackDisplayHorizontal.classList.add('slider__black-display_display-off');
+        blackDisplayHorizontal.classList.toggle('slider__black-display_display-off');
     }
 
 //Переключение табов Portfolio и рандомное перемещение картинок Portfolio
