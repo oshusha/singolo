@@ -10,7 +10,8 @@ window.onload = function () {
     const POPUP = document.getElementById('popup');
     const CLOSE_BUTTON = document.getElementById('close__button');
     const REQUIRED = "Это обязательное поле";
-    const TYPE_MISMATCH = "Неправильный формат, введите email";
+    const TYPE_MISMATCH_EMAIL= "Неправильный формат, введите email";
+    const PATTERN_MISMATCH_NAME = "В имени не должно быть цифр";
     const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
 
 //Реализуем активные пункты меню при перемещении по ним
@@ -198,8 +199,16 @@ window.onload = function () {
                 }
             }
 
-            if (error === TYPE_MISMATCH) {
+            if (error === TYPE_MISMATCH_EMAIL) {
                 if (input.validity.typeMismatch) {
+                    form.querySelector(`#${input.name}`)
+                        .textContent = error;
+
+                }
+            }
+
+            if (error === PATTERN_MISMATCH_NAME) {
+                if (input.validity.patternMismatch) {
                     form.querySelector(`#${input.name}`)
                         .textContent = error;
 
@@ -218,7 +227,9 @@ window.onload = function () {
     function addHtmlErrors(e) {
         const {target} = e;
         _checkValidityOnInput(target, target.validity.valueMissing, REQUIRED, FORM);
-        _checkValidityOnInput(target, target.validity.typeMismatch, TYPE_MISMATCH, FORM);
+        _checkValidityOnInput(target, target.validity.typeMismatch, TYPE_MISMATCH_EMAIL, FORM);
+        _checkValidityOnInput(target, target.validity.patternMismatch, PATTERN_MISMATCH_NAME, FORM);
+
     }
 
 
@@ -230,7 +241,9 @@ window.onload = function () {
             openPopup();
         } else {
             _checkValidityOnSubmit(inputs, REQUIRED, FORM);
-            _checkValidityOnSubmit(inputs, TYPE_MISMATCH, FORM)
+            _checkValidityOnSubmit(inputs, TYPE_MISMATCH_EMAIL, FORM);
+            _checkValidityOnSubmit(inputs, PATTERN_MISMATCH_NAME, FORM);
+
         }
     }
 
