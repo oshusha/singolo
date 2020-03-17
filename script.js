@@ -9,6 +9,9 @@ window.onload = function () {
     const BUTTON = document.getElementById('form__button');
     const POPUP = document.getElementById('popup');
     const CLOSE_BUTTON = document.getElementById('close__button');
+    const REQUIRED = "Это обязательное поле";
+    const TYPE_MISMATCH = "Неправильный формат, введите email";
+    const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
 
 //Реализуем активные пункты меню при перемещении по ним
     function chooseItemMenu(event) {
@@ -162,14 +165,78 @@ window.onload = function () {
         }
     };
 
-//Отменяем отправление данных по кнопке Сабмит. Добавляем попап с отправленными опциями поверх.
-    function cancelSubmit(event) {
-        event.preventDefault();
+//очищаем область ошибок
+    function _removeHtmlErrors(elems) {
+        elems.forEach((field) => field.textContent = '');
     }
 
-    function openPopup(event) {
-        let subjectValue = this.form.subject.value;
-        let describeValue = this.form.describe.value;
+    //проверка полей при наборе
+    function _checkValidityOnInput(target, validityState, error, form) {
+        const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
+        inputs.forEach((input) => {
+            if (target.name === input.name) {
+                if (validityState) {
+                    form.querySelector(`#${input.name}`)
+                        .textContent = error;
+                }
+
+                if (target.validity.valid) {
+                    form.querySelector(`#${input.name}`)
+                        .textContent = '';
+                }
+            }
+        });
+    }
+
+    //проверка полей при сабмите
+    function _checkValidityOnSubmit(inputs, error, form) {
+        inputs.forEach((input) => {
+            if (error === REQUIRED) {
+                if (input.validity.valueMissing) {
+                    form.querySelector(`#${input.name}`)
+                        .textContent = error;
+                }
+            }
+
+            if (error === TYPE_MISMATCH) {
+                if (input.validity.typeMismatch) {
+                    form.querySelector(`#${input.name}`)
+                        .textContent = error;
+
+                }
+            }
+
+            if (input.validity.valid) {
+                form.querySelector(`#${input.name}`)
+                    .textContent = '';
+            }
+
+        });
+    }
+
+    //добавление ошибок, ннада повесить на событие ввода
+    function addHtmlErrors(e) {
+        const {target} = e;
+        _checkValidityOnInput(target, target.validity.valueMissing, REQUIRED, FORM);
+        _checkValidityOnInput(target, target.validity.typeMismatch, TYPE_MISMATCH, FORM);
+    }
+
+
+//Отменяем отправление данных по кнопке Сабмит. Добавляем попап с отправленными опциями поверх.
+    function popupHandler(event) {
+
+        if (validate(inputs)) {
+            event.preventDefault();
+            openPopup();
+        } else {
+            _checkValidityOnSubmit(inputs, REQUIRED, FORM);
+            _checkValidityOnSubmit(inputs, TYPE_MISMATCH, FORM)
+        }
+    }
+
+    function openPopup() {
+        let subjectValue = FORM.subject.value;
+        let describeValue = FORM.describe.value;
         if (subjectValue.length) {
             document.getElementById('popup__result-subject').innerText = subjectValue;
         } else
@@ -187,28 +254,33 @@ window.onload = function () {
 
     function closePopup(event) {
         if (event.target.tagName === 'BUTTON') {
-            event.preventDefault();
             POPUP.classList.add('popup__hidden');
             FORM.reset();
         }
     }
 
-    const form = document.forms.form;
-
     function validate(inputs) {
         return inputs.every((elem) => elem.checkValidity());
     }
 
-    form.addEventListener("input", (event) => {
+    function _enableButton() {
+        BUTTON.removeAttribute('disabled', true);
+    }
 
+    function _disableButton() {
+        BUTTON.setAttribute("disabled", true);
+    }
+
+    function checkButton(event) {
+        event.preventDefault();
         const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
-
         if (validate(inputs)) {
-            BUTTON.removeAttribute('disabled', true);
+            _enableButton();
+            _removeHtmlErrors(inputs);
         } else {
-            BUTTON.setAttribute("disabled", true);
+            _disableButton();
         }
-    });
+    }
 
 //Слушатели событий
     MENU.addEventListener('click', chooseItemMenu);
@@ -216,8 +288,11 @@ window.onload = function () {
     BUTTON_IPHONE_HORIZONTAL.addEventListener('click', offDisplayRightPhone);
     TABS.addEventListener('click', chooseTabAndMakeRandom);
     PROJECTS.addEventListener('click', addBorderForProjects);
-    FORM.addEventListener('submit', cancelSubmit);
-    BUTTON.addEventListener('click', openPopup);
+    FORM.addEventListener('submit', checkButton);
+    FORM.addEventListener('submit', popupHandler);
+    FORM.addEventListener('input', addHtmlErrors);
+    FORM.addEventListener('input', checkButton);
     CLOSE_BUTTON.addEventListener('click', closePopup);
+
 
 }
