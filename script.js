@@ -3,6 +3,7 @@ window.onload = function () {
     const MENU = document.getElementById('menu');
     const BUTTON_IPHONE_VERTICAL = document.getElementById('button_iphone-vertical');
     const BUTTON_IPHONE_HORIZONTAL = document.getElementById('button_iphone-horizontal');
+    const BUTTON_IPHONE_CENTRAL = document.getElementById('back-slide-button');
     const TABS = document.getElementById('tabs_menu');
     const PROJECTS = document.getElementById('projects');
     const FORM = document.getElementById('form');
@@ -136,6 +137,12 @@ window.onload = function () {
     function offDisplayRightPhone() {
         const blackDisplayHorizontal = document.getElementById('black-display-horizontal');
         blackDisplayHorizontal.classList.toggle('slider__black-display_display-off');
+    }
+
+//Активация телефона слайда2 (экран гаснет)
+    function offDisplayCentralPhone() {
+        const blackDisplayCentral = document.getElementById('back-phone-display')
+        blackDisplayCentral.classList.toggle('back-slide__phone-display_off');
     }
 
 //Переключение табов Portfolio и рандомное перемещение картинок Portfolio
@@ -299,6 +306,7 @@ window.onload = function () {
     MENU.addEventListener('click', chooseItemMenu);
     BUTTON_IPHONE_VERTICAL.addEventListener('click', offDisplayLeftPhone);
     BUTTON_IPHONE_HORIZONTAL.addEventListener('click', offDisplayRightPhone);
+    BUTTON_IPHONE_CENTRAL.addEventListener('click', offDisplayCentralPhone);
     TABS.addEventListener('click', chooseTabAndMakeRandom);
     PROJECTS.addEventListener('click', addBorderForProjects);
     FORM.addEventListener('submit', checkButton);
