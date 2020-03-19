@@ -75,11 +75,13 @@ button {
 .header__logo {
     margin: 0;
 
+    font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: bold;
+    font-style: normal;
     font-size: 25px;
     line-height: 1;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.03em;
     color: #ffffff;
     cursor: pointer;
 }
@@ -107,9 +109,12 @@ button {
     position: relative;
 
     text-transform: uppercase;
+    line-height: 1.4;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
     font-size: 12px;
-    font-weight: 700;
-    line-height: 1.2;
 }
 
 .navigation__link {
@@ -135,7 +140,7 @@ button {
     width: 3px;
     height: 3px;
 
-    background-color: #434759;
+    background-color: #ffffff;
     border-radius: 50%;
 
     position: absolute;
@@ -234,7 +239,13 @@ button {
 .slider__item_next {
     display: block;
 }
+.show {
+    display: block;
+}
 
+.slider__item_back-slide  {
+    display: none;
+}
 .slider__item_front-slide {
     position: relative;
 }
@@ -244,6 +255,14 @@ button {
     z-index: 1;
     bottom: 58px;
     left: 72px;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
 }
 
 .front-slide__phone-image_horizontal {
@@ -455,6 +474,7 @@ button {
     font-size: 30px;
     line-height: 0.8;
     font-weight: 900;
+    font-style: normal;
     letter-spacing: 0.01em;
     word-spacing: -1.5px;
 }
@@ -680,7 +700,7 @@ button {
 }
 
 .portfolio__photo-grid-item_active {
-    border: 5px double #F06C64;
+    box-shadow: 0 0 5px 5px  #F06C64;
 }
 
 /*ABOUT*/
@@ -831,7 +851,7 @@ button {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 70px 40px 116px;
+    padding: 70px 40px 64px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -874,7 +894,7 @@ button {
 }
 
 .quote__form {
-    width: 619px;
+    width: 620px;
     margin: 0;
     padding: 0;
     border: none;
@@ -894,12 +914,12 @@ button {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-
 }
 
 .form__input {
     display: block;
     width: 100%;
+    max-height: 38px;
     padding: 11px 14px 12px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -980,6 +1000,7 @@ button {
 
 .form__text-area {
     width: 100%;
+    max-height: 159px;
     margin-top: 9px;
     padding: 7px 14px 1px;
     -moz-box-sizing: border-box;
@@ -1048,16 +1069,14 @@ button {
 
 .form__button {
     width: 136px;
-
+    margin-top: 14px;
+    max-height: 38px;
     font-family: "Lato Bold", sans-serif;
     font-size: 14px;
     line-height: 1.7em;
     font-weight: 400;
     padding: 7px 7px;
     border: none;
-
-    position: absolute;
-    bottom: -12%;
     border-radius: 5px;
     cursor: pointer;
     color: #886A30;
@@ -1234,6 +1253,8 @@ button {
     align-content: center;
     text-align: center;
     background: #c5c5c5;
+
+    border-radius: 5px;
 }
 
 .popup__title {
@@ -1312,8 +1333,8 @@ button {
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: center;
-    -webkit-box-align: center;
+    justify-content: space-between;
+    -webkit-box-align: space-between;
     -ms-flex-align: center;
     align-items: center;
 }
@@ -1326,11 +1347,13 @@ button {
     -ms-flex-pack: justify;
     justify-content: space-between;
 
-    font-weight: 300;
-    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 18px;
     word-spacing: -0.06em;
     letter-spacing: -0.001em;
-
 }
 
 .footer__copyright_decoration {

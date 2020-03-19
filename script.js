@@ -62,6 +62,7 @@ window.onload = function () {
         SLIDER.classList.toggle("slider_blue");
         document.querySelector(".slider__arrow.left").classList.toggle("arrow_color");
         document.querySelector(".slider__arrow.right").classList.toggle("arrow_color");
+        document.querySelector('.slider__item_back-slide').classList.add('show')
     }
 
     function nextSlide(n) {
@@ -71,6 +72,8 @@ window.onload = function () {
         SLIDER.classList.toggle("slider_blue");
         document.querySelector(".slider__arrow.left").classList.toggle("arrow_color");
         document.querySelector(".slider__arrow.right").classList.toggle("arrow_color");
+        document.querySelector('.slider__item_back-slide').classList.add('show')
+
     }
 
     ARROW_PREV.addEventListener('click', function () {
