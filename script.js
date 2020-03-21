@@ -32,12 +32,10 @@ window.onload = function () {
         const curPos = window.scrollY;
         const sections = document.querySelectorAll('header, section');
         const links = document.querySelectorAll('#menu a');
-        console.log(links);
-
 
         sections.forEach((el) => {
-
-            if(el.offsetTop - 90 <= curPos && (el.offsetTop + el.offsetHeight) - 90 > curPos) {
+            const heightHeader = 95;
+            if(el.offsetTop - heightHeader <= curPos && (el.offsetTop + el.offsetHeight - heightHeader) > curPos) {
                 links.forEach((a) => {
                     a.classList.remove('navigation__link_state_active');
                     if(el.getAttribute('id') === a.getAttribute('href').substring(1)) {

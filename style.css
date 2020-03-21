@@ -34,6 +34,14 @@ html {
     scroll-behavior: smooth;
 }
 
+.slider,
+.services,
+.portfolio,
+.about,
+.quote{
+    scroll-margin-top: 94px;
+}
+
 .page {
     width: 100%;
     margin: 0 auto;
@@ -174,6 +182,9 @@ html {
     width: 100%;
     height: 95px;
     background: #2d303a;
+    position: absolute;
+    top: 0;
+    z-index: 2;
 }
 
 .main {
@@ -201,6 +212,7 @@ html {
 
 .slider__content {
     margin: 0 auto;
+    padding-top: 95px;
     width: 940px;
 }
 
