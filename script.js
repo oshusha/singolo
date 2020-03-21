@@ -15,7 +15,8 @@ window.onload = function () {
     const PATTERN_MISMATCH_NAME = "В имени не должно быть цифр";
     const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
 
-//Реализуем активные пункты меню при перемещении по ним
+    //Реализуем активные пункты меню при перемещении по ним
+
     function chooseItemMenu(event) {
         MENU.querySelectorAll('a').forEach(el =>
             el.classList.remove('navigation__link_state_active'));
@@ -23,9 +24,34 @@ window.onload = function () {
         event.target.classList.add('navigation__link_state_active');
     }
 
+
+    //Плавный скролл до нужного раздела
+    document.addEventListener('scroll', onScroll);
+
+    function onScroll() {
+        const curPos = window.scrollY;
+        const sections = document.querySelectorAll('header, section');
+        const links = document.querySelectorAll('#menu a');
+        console.log(links);
+
+
+        sections.forEach((el) => {
+
+            if(el.offsetTop - 90 <= curPos && (el.offsetTop + el.offsetHeight) - 90 > curPos) {
+                links.forEach((a) => {
+                    a.classList.remove('navigation__link_state_active');
+                    if(el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                        a.classList.add('navigation__link_state_active');
+                    }
+
+                })
+            }
+        })
+
+    }
+
+
 //Переключение слайдов бесконечной каруселькой
-    const SLIDE_RED = document.getElementById('slide-red');
-    const SLIDE_BLUE = document.getElementById('slide-blue');
     const ARROW_PREV = document.getElementById('arrow-prev');
     const ARROW_NEXT = document.getElementById('arrow-next');
 
@@ -89,46 +115,6 @@ window.onload = function () {
         }
     })
 
-    // function sliderHeader(event) {
-    //     let currentSlide = 0;
-    //     currentSlide = (currentSlide + 1) % SLIDES.length;
-    //     SLIDES[currentSlide].classList.toggle("slider__container_active");
-    //
-    //     if (SLIDES[currentSlide].classList.contains('slider__container_blue')) {
-    //         SLIDER.classList.toggle('slider_blue');
-    //         ARROW_PREV.classList.toggle('slider__arrow-prev-blue')
-    //     }
-    //
-    //     if (SLIDES[currentSlide].classList.contains('slider__container_red')) {
-    //         SLIDER.classList.toggle('slider_red');
-    //     }
-    // }
-
-    // function addAnimation(event) {
-    //     if (event.target == ARROW_PREV) {
-    //         SLIDE_BLUE.classList.add('slider_on-the-left');
-    //         console.log('Класс добавлен')
-    //     }
-    //
-    //     if  (event.target == ARROW_NEXT) {
-    //         SLIDE_RED.classList.add('slider_on-the-right');
-    //         console.log('Класс добавлен тоже');
-    //     }
-    // }
-    // if (event.target == ARROW_PREV || event.target == ARROW_NEXT) {
-    //
-    // }
-    // ARROW_PREV.addEventListener('click', () => {
-    //     console.log('PREV!');
-    //     SLIDER.style.backgroundColor = '#648bf0';
-    //     SLIDER.style.borderBottomColor = '#5173cb';
-    //     console.log(SLIDES);
-    // })
-
-    // ARROW_PREV.addEventListener('click', addAnimation);
-    // ARROW_NEXT.addEventListener('click', addAnimation);
-    // ARROW_PREV.addEventListener('click', sliderHeader);
-    // ARROW_NEXT.addEventListener('click', sliderHeader);
 
 
 //Активация телефонов слайда1 (экран гаснет)

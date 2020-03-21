@@ -29,6 +29,11 @@ button {
     border: none;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
 .page {
     width: 100%;
     margin: 0 auto;
@@ -185,13 +190,13 @@ button {
 .slider_red {
     border-bottom: 6px solid #ea676b;
     background-color: #f06c64;
-    transition: 1.2s;
+    transition: 3s;
 }
 
 .slider_blue {
     border-bottom: 6px solid #5a84f0;
     background-color: #5173cb;
-    transition: 1.2s;
+    transition: 3s;
 }
 
 .slider__content {
