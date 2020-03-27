@@ -1,6 +1,7 @@
 'use strict';
 window.onload = function () {
     const MENU = document.getElementById('menu');
+    const BURGER = document.getElementById('burger');
     const BUTTON_IPHONE_VERTICAL = document.getElementById('button_iphone-vertical');
     const BUTTON_IPHONE_HORIZONTAL = document.getElementById('button_iphone-horizontal');
     const BUTTON_IPHONE_CENTRAL = document.getElementById('back-slide-button');
@@ -14,6 +15,12 @@ window.onload = function () {
     const TYPE_MISMATCH_EMAIL= "Неправильный формат, введите email";
     const PATTERN_MISMATCH_NAME = "В имени не должно быть цифр";
     const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
+
+    //Открываем меню бургер
+
+    function openBurger(event) {
+        BURGER.classList.toggle("header__burger_active");
+    }
 
     //Реализуем активные пункты меню при перемещении по ним
 
@@ -291,6 +298,7 @@ window.onload = function () {
 
 //Слушатели событий
     MENU.addEventListener('click', chooseItemMenu);
+    BURGER.addEventListener('click', openBurger);
     BUTTON_IPHONE_VERTICAL.addEventListener('click', offDisplayLeftPhone);
     BUTTON_IPHONE_HORIZONTAL.addEventListener('click', offDisplayRightPhone);
     BUTTON_IPHONE_CENTRAL.addEventListener('click', offDisplayCentralPhone);
