@@ -56,6 +56,7 @@ window.onload = function () {
 
         event.target.classList.add('navigation__link-mobile_state_active');
         document.getElementById('mobile-menu').classList.add('header__mobile-menu_hidden');
+        BODY.classList.remove('scroll-hidden');
     }
 
     MOBILE_MENU.addEventListener('click', chooseItemMenuBurger);
