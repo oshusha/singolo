@@ -1,6 +1,9 @@
 'use strict';
 window.onload = function () {
+    const BODY = document.querySelector('body');
     const MENU = document.getElementById('menu');
+    const MOBILE_MENU = document.querySelector('.header__mobile-menu');
+    const BURGER = document.getElementById('burger');
     const BUTTON_IPHONE_VERTICAL = document.getElementById('button_iphone-vertical');
     const BUTTON_IPHONE_HORIZONTAL = document.getElementById('button_iphone-horizontal');
     const BUTTON_IPHONE_CENTRAL = document.getElementById('back-slide-button');
@@ -14,6 +17,49 @@ window.onload = function () {
     const TYPE_MISMATCH_EMAIL= "Неправильный формат, введите email";
     const PATTERN_MISMATCH_NAME = "В имени не должно быть цифр";
     const inputs = Array.from(document.querySelectorAll('form[name=form] input'));
+
+    //Открываем меню бургер
+
+    BURGER.addEventListener('click', (e) => {
+        if (e.target.tagName === "DIV") {
+            if (e.target.classList[1] == 'header__burger-button_active') {
+                e.target.classList.remove('header__burger-button_active');
+                document.getElementById('mobile-menu').classList.add('header__mobile-menu_hidden');
+                BODY.classList.remove('scroll-hidden');
+            }
+            else {
+                e.target.classList.add('header__burger-button_active');
+                document.getElementById('mobile-menu').classList.remove('header__mobile-menu_hidden');
+                BODY.classList.add('scroll-hidden');
+            }
+        }
+
+        else {
+            if (e.target.parentElement.classList[1] == 'header__burger-button_active') {
+                e.target.parentElement.classList.remove('header__burger-button_active');
+                document.getElementById('mobile-menu').classList.add('header__mobile-menu_hidden');
+                BODY.classList.remove('scroll-hidden');
+            }
+            else {
+                e.target.parentElement.classList.add('header__burger-button_active');
+                document.getElementById('mobile-menu').classList.remove('header__mobile-menu_hidden');
+                BODY.classList.add('scroll-hidden');
+            }
+        }
+    });
+
+
+
+    function chooseItemMenuBurger(event) {
+        MOBILE_MENU.querySelectorAll('a').forEach(el =>
+            el.classList.remove('navigation__link-mobile_state_active'));
+
+        event.target.classList.add('navigation__link-mobile_state_active');
+        document.getElementById('mobile-menu').classList.add('header__mobile-menu_hidden');
+        BODY.classList.remove('scroll-hidden');
+    }
+
+    MOBILE_MENU.addEventListener('click', chooseItemMenuBurger);
 
     //Реализуем активные пункты меню при перемещении по ним
 
